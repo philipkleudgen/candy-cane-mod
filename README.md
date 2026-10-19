@@ -23,7 +23,7 @@ Dazu kommen zwei Farbthemen (`weihnachten-hell`, `weihnachten-dunkel`). Mit dem 
 
 1. Repo klonen, zum Beispiel nach `~/.claude/mods/candy-cane`:
    ```bash
-   git clone https://github.com/philipkleudgen-hash/candy-cane-mod ~/.claude/mods/candy-cane
+   git clone https://github.com/philipkleudgen/candy-cane-mod ~/.claude/mods/candy-cane
    ```
 2. In `~/.claude/settings.json` den Ordner eintragen:
    ```json
