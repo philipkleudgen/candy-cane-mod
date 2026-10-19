@@ -1,0 +1,6 @@
+{
+  "name": "candy-cane",
+  "version": "0.2.0",
+  "description": "Weihnachts-Mod: Countdown bis zum 1. Advent, Schnee, Adventskalender, festliche Wartetexte und Silvester. Deutsch und Englisch.",
+  "types": "./types/index.d.ts"
+}

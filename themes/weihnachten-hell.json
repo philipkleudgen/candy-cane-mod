@@ -1,0 +1,25 @@
+{
+  "name": "Candy Cane (hell)",
+  "base": "light",
+  "overrides": {
+    "claude": "#B5122B",
+    "claudeShimmer": "#E0303F",
+    "clawd_body": "#C8102E",
+    "briefLabelClaude": "#B5122B",
+    "promptBorder": "#C8102E",
+    "promptBorderShimmer": "#A8740F",
+    "success": "#1F7A4A",
+    "error": "#C8102E",
+    "warning": "#A8740F",
+    "permission": "#2E7FA8",
+    "suggestion": "#2E7FA8",
+    "remember": "#A8740F",
+    "bashBorder": "#1F7A4A",
+    "planMode": "#1F7A4A",
+    "autoAccept": "#A8740F",
+    "merged": "#9A3F6B",
+    "rate_limit_fill": "#A8740F",
+    "userMessageBackground": "#F7E9EA",
+    "userMessageBackgroundHover": "#F0DADC"
+  }
+}

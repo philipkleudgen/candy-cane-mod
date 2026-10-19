@@ -1,0 +1,29 @@
+{
+  "name": "Candy Cane (dunkel)",
+  "base": "dark",
+  "overrides": {
+    "claude": "#E0303F",
+    "claudeShimmer": "#FF6B78",
+    "clawd_body": "#E0303F",
+    "briefLabelClaude": "#E0303F",
+    "promptBorder": "#C8102E",
+    "promptBorderShimmer": "#E8B04B",
+    "success": "#3FA66B",
+    "error": "#FF5C6A",
+    "warning": "#E8B04B",
+    "warningShimmer": "#F5CE7A",
+    "permission": "#9ED8F0",
+    "permissionShimmer": "#C7EAF7",
+    "suggestion": "#9ED8F0",
+    "remember": "#E8B04B",
+    "bashBorder": "#3FA66B",
+    "planMode": "#3FA66B",
+    "autoAccept": "#E8B04B",
+    "autoAcceptShimmer": "#F5CE7A",
+    "merged": "#C76B98",
+    "rate_limit_fill": "#E8B04B",
+    "fastMode": "#E8B04B",
+    "userMessageBackground": "#3A1F24",
+    "userMessageBackgroundHover": "#4A262C"
+  }
+}
