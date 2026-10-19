@@ -253,9 +253,14 @@ export const register: Register = on => {
     // Streifen aus Schrägdreiecken, im Winter rot auf weiß wie eine Zuckerstange, im Oktober orange auf schwarz.
     const felder = Math.ceil(((e.props as { bodyColumns?: number }).bodyColumns ?? 160) / 2)
     const streifen = () => (
-      // Eine Zeile hoch, Überstand abgeschnitten statt mit „…“ gekürzt.
-      <Box height={1} overflow="hidden">
-        <Text color={F.rot} backgroundColor={F.weiss}>{'◤◢'.repeat(felder)}</Text>
+      // Kurze Stücke nebeneinander, die nie umbrechen; was über die Breite ragt, schneidet die Zeile ab.
+      // Ein langer Text bräche in der App um oder bekäme ein „…“.
+      <Box flexDirection="row" height={1} overflow="hidden">
+        {Array.from({ length: Math.ceil(felder / 4) }, (_, i) => (
+          <Box key={i} flexShrink={0}>
+            <Text color={F.rot} backgroundColor={F.weiss}>{'◤◢◤◢◤◢◤◢'}</Text>
+          </Box>
+        ))}
       </Box>
     )
     return (

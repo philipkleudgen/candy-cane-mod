@@ -17,7 +17,7 @@ Candy Cane richtet sich nach dem Kalender (Berliner Zeit):
 | Weihnachten bis Silvester | Festtagsgrüße, an Silvester ein Countdown bis Mitternacht |
 | ab 2. Januar | Die Mod schläft bis zum nächsten Herbst |
 
-Dazu kommen zwei Farbthemen (`weihnachten-hell`, `weihnachten-dunkel`). Mit dem Befehl `/weihnachten` stellst du die Stufe und die Sprache (Deutsch oder Englisch) um.
+Dazu kommen zwei Farbthemen (`weihnachten-hell`, `weihnachten-dunkel`). Mit dem Befehl `/weihnachten` siehst du den Stand und stellst Stufe (`auto`, `an`, `dezent`, `aus`) und Sprache (`de`, `en`) um. Das eigene Seitenfenster öffnet `/weihnachten fenster`. In der Desktop-App verdrängt es das gerade offene Fenster, deshalb geht es nie von selbst auf.
 
 ## Installation
 
@@ -33,7 +33,7 @@ Dazu kommen zwei Farbthemen (`weihnachten-hell`, `weihnachten-dunkel`). Mit dem 
      }
    }
    ```
-   Wenn du schon andere Mods nutzt, hängst du den Pfad mit `:` an.
+   Wenn du schon andere Mods nutzt, setzt du Candy Cane mit `:` getrennt **an die erste Stelle**. Nur dann kann es die Fenster und Bänder deiner anderen Mods in Saisonfarben einfärben.
 3. Claude Code neu starten.
 
 ---
