@@ -160,3 +160,17 @@ for (const surface of ['terminal', 'desktop'] as const) {
     await band.unmount()
   })
 }
+
+test('Kerzen im Countdown sind einzelne, nicht schrumpfende Stücke und brechen nicht um', async ($, on) => {
+  // 02.11.2026, 10 Uhr Berliner Zeit: Countdown, noch keine Kerze an
+  mock.clock(on, { now: Date.UTC(2026, 10, 2, 9, 0) })
+  mock.store(on)
+  on('ui.render', ($, e) => {
+    const { Box } = $.ui.resolve(e)
+    return <Box />
+  })
+  const band = await $.ui.mount({ plugin: 'candy-cane', surface: 'desktop', component: 'AbovePrompt', props: { hasSurvey: false, isWorking: false, maxRows: 10, bodyColumns: 40 } as never })
+  const kerzen = await band.findAll({ type: 'Text', text: /^○$/ })
+  expect(kerzen.length).toBe(4)
+  await band.unmount()
+})

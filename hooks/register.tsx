@@ -249,7 +249,7 @@ export const register: Register = on => {
     // Aus App-Bausteinen statt als Grafik: eine schmale Zeile über die volle Breite, auf jeder Oberfläche gleich.
     const b = a.band
     const F = farbenFuer(l)
-    const kerzenZeile = b.herbst ? '🍂 🎃 🍁' : b.silvester ? '🎆 🥂 🎆' : b.kerzen !== undefined ? [0, 1, 2, 3].map(i => (i < (b.kerzen ?? 0) ? '🕯️' : '○')).join(' ') : ''
+    const kerzenZeichen = b.herbst ? ['🍂', '🎃', '🍁'] : b.silvester ? ['🎆', '🥂', '🎆'] : b.kerzen !== undefined ? [0, 1, 2, 3].map(i => (i < (b.kerzen ?? 0) ? '🕯️' : '○')) : []
     // Streifen aus Schrägdreiecken, im Winter rot auf weiß wie eine Zuckerstange, im Oktober orange auf schwarz.
     const felder = Math.ceil(((e.props as { bodyColumns?: number }).bodyColumns ?? 160) / 2)
     const streifen = () => (
@@ -268,12 +268,24 @@ export const register: Register = on => {
         <Box flexDirection="column" borderStyle="round" borderColor={F.rot}>
           {streifen()}
           <Box flexDirection="row" justifyContent="space-between" alignItems="center" backgroundColor={F.tief} paddingX={1}>
-            <Text wrap="truncate-end">
-              <Text>{b.herbst ? '🎃🦇 ' : '🍬🎄 '}</Text>
-              <Text color={b.herbst ? '#FFF1D6' : F.weiss} bold>{b.zeile}</Text>
-              {b.unterzeile ? <Text color={F.gold} italic>{`  ${b.unterzeile}`}</Text> : null}
-            </Text>
-            {kerzenZeile ? <Text color={F.gold} bold>{kerzenZeile}</Text> : null}
+            {/* Der Text links darf schrumpfen und wird gekürzt; die Kerzen rechts nie. */}
+            <Box flexGrow={1} flexShrink={1} minWidth={0}>
+              <Text wrap="truncate-end">
+                <Text>{b.herbst ? '🎃🦇 ' : '🍬🎄 '}</Text>
+                <Text color={b.herbst ? '#FFF1D6' : F.weiss} bold>{b.zeile}</Text>
+                {b.unterzeile ? <Text color={F.gold} italic>{`  ${b.unterzeile}`}</Text> : null}
+              </Text>
+            </Box>
+            {/* Jedes Zeichen ein eigenes, nicht schrumpfendes Stück: ein Text wie „○ ○ ○ ○“ brach in der App um. */}
+            {kerzenZeichen.length ? (
+              <Box flexDirection="row" flexShrink={0} gap={1} marginLeft={1}>
+                {kerzenZeichen.map((z, i) => (
+                  <Box key={i} flexShrink={0}>
+                    <Text color={F.gold} bold>{z}</Text>
+                  </Box>
+                ))}
+              </Box>
+            ) : null}
           </Box>
           {streifen()}
         </Box>
